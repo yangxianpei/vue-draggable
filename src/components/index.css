@@ -1,0 +1,8 @@
+.del{
+    float: right;
+    padding: 5px;
+    border-radius: 5px;
+}
+.del:hover{
+    background: #ccc;
+}
