@@ -9,11 +9,18 @@ export default {
         id: {
             type: Number,
             default: -1
+        },
+        index:{
+            type:Number
+        },
+        name:{
+            type:String
         }
     },
     methods:{
         btn(){
-            this.$emit('removeElement',this.id)
+            console.log(this.index);
+            this.$emit('removeElement',this.index)
         }
     },
     render() {
@@ -27,7 +34,9 @@ export default {
                  break;
         }
         return (
-            <div class='aaa'>
+            <div class='elementcomp'>
+                {this.name}
+                <div class='line'></div>
                 {content}
                 <div onClick={this.btn} class='del'>删除</div>
             </div>

@@ -12,7 +12,7 @@ export default {
     return {
       option: {
         title: {
-          text: "ECharts 入门示例"
+          text: ""
         },
         tooltip: {},
         legend: {
@@ -26,7 +26,7 @@ export default {
           {
             name: "销量",
             type: "bar",
-            data: [5, 20, 36, 10, 10, 20]
+            data: [1,1,1,1,1,1]
           }
         ]
       }

@@ -13,7 +13,7 @@
         <div class="box">
           <draggable :options="optionsRight" v-model="elementListRight">
               <li v-for="(item,i) in elementListRight" :key="item.id+i">
-                <componentsList :id="item.id" @removeElement="removeElement"></componentsList>
+                <componentsList :id="item.id" @removeElement="removeElement" :index='i' :name='item.name'></componentsList>
               </li>
             <div class="title-tag" v-if="elementListRight.length==0">
               <h1>添加元素</h1>
@@ -28,6 +28,7 @@
 <script>
 import draggable from "vuedraggable";
 import componentsList from "./components/index.js";
+import {debounce} from 'lodash'
 export default {
   components: {
     draggable,
@@ -43,12 +44,8 @@ export default {
           id: 1
         },
         {
-          name: "简报概述",
+          name: "表格",
           id: 2
-        },
-        {
-          name: "监测概述",
-          id: 3
         }
       ],
       elementListRight: []
@@ -77,7 +74,7 @@ export default {
   },
   methods: {
     removeElement(i) {
-      this.elementListRight.splice(i-1,1)
+      this.elementListRight.splice(i,1)
     }
   }
 };

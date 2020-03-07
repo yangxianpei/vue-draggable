@@ -1,8 +1,18 @@
 .del{
     float: right;
     padding: 5px;
+    margin-top: 10px;
     border-radius: 5px;
+    z-index: 9999;
+    cursor: pointer;
 }
 .del:hover{
     background: #ccc;
+}
+.elementcomp{
+    margin: 10px 0;
+}
+.line{
+    border-bottom: 1px solid #ddd;
+    margin: 12px;
 }
